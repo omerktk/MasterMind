@@ -19,18 +19,20 @@ public class scoreadapter extends RecyclerView.Adapter<scoreadapter.myviewholder
     @NonNull
     @Override
     public myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.scorelist,parent,false);
-        return new scoreadapter(view);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.scorelist,parent,false);
+        return new myviewholder(view);
     }
+
 
     @Override
     public void onBindViewHolder(@NonNull myviewholder holder, int position) {
-
+        holder.t1.setText(data[position].getName());
+        holder.t2.setText(data[position].getScore());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return data.length;
     }
 
     class myviewholder extends RecyclerView.ViewHolder
