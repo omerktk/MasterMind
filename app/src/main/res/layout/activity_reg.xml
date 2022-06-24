@@ -34,20 +34,23 @@ tools:context=".RegActivity">
     android:textColor="@color/white"
     android:textColorHint="@color/white" />
 
-<EditText
-    android:id="@+id/age"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/username"
-    android:layout_margin="10dp"
-    android:background="#30ffffff"
-    android:drawableLeft="@drawable/ic_baseline_person_outline_24"
-    android:drawablePadding="20dp"
-    android:hint="Age"
-    android:inputType="number"
-    android:padding="20dp"
-    android:textColor="@color/white"
-    android:textColorHint="@color/white" />
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/username"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#30ffffff"
+        android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+        android:drawablePadding="20dp"
+        android:hint="Age"
+        android:inputType="number"
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
 <EditText
     android:id="@+id/mail"
@@ -81,6 +84,7 @@ tools:context=".RegActivity">
 
 <com.google.android.material.button.MaterialButton
     android:id="@+id/loginbtn"
+    android:textColor="@color/white"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_below="@id/password"
@@ -101,6 +105,19 @@ tools:context=".RegActivity">
     android:layout_marginRight="-49dp"
     android:layout_marginBottom="-72dp"
     android:visibility="gone" />
+    <TextView
+
+        android:id="@+id/forgotpass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:textSize="21sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:text="MasterMind.org"
+        android:gravity="center"
+        />
 
 
 </RelativeLayout>
