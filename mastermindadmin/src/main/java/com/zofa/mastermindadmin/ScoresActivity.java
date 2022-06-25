@@ -1,4 +1,5 @@
-package com.zofa.mastermind;
+package com.zofa.mastermindadmin;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
