@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -24,15 +27,23 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 public class EasywordsActivity extends AppCompatActivity {
 
+
     MaterialButton send;
     RequestQueue requestQueue;
-    TextView tv;
+    TextView tv,tv2;
     EditText word;
+
+
+    private static final String url="http://192.168.120.108/mastermind/api/game/testscores.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +52,37 @@ public class EasywordsActivity extends AppCompatActivity {
         word = findViewById(R.id.testword);
 
 
-        GetData();
+       GetData();
+       GetScore();
+    }
+
+    private void GetScore() {
+        SharedPreferences sp = getSharedPreferences("credentials",MODE_PRIVATE);
+        String email= sp.getString("uname","");
+        requestQueue = Volley.newRequestQueue(this);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
+                "http://192.168.120.108/mastermind/api/game/testscores.php?email2="+email, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                tv2 = findViewById(R.id.myscore);
+                send =(MaterialButton) findViewById(R.id.send);
+
+
+                try {
+                    String a = response.getString("test");
+                    tv2.setText("Your Score = "+a+" ");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "Error"+e, Toast.LENGTH_LONG).show();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+        requestQueue.add(jsonObjectRequest);
     }
 
     private void GetData() {
@@ -66,10 +107,88 @@ public class EasywordsActivity extends AppCompatActivity {
                             return;
                         }
                         if(dword.toString().equals(w)){
-                            Toast.makeText(getApplicationContext(), "5 points added", Toast.LENGTH_LONG).show();
+
+
+                            class dbprocess extends AsyncTask<String,Void,String>
+                            {
+                                @Override
+                                protected  void onPostExecute(String data)
+                                {
+                                    if(data.equals("found"))
+                                    {
+                                        Toast.makeText(getApplicationContext(), "5 points added", Toast.LENGTH_LONG).show();
+                                    }
+                                    else
+                                    {
+                                        Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                                @Override
+                                protected String doInBackground(String... params)
+                                {
+                                    String furl=params[0];
+
+                                    try
+                                    {
+                                        URL url=new URL(furl);
+                                        HttpURLConnection conn=(HttpURLConnection)url.openConnection();
+                                        BufferedReader br=new BufferedReader(new InputStreamReader(conn.getInputStream()));
+
+                                        return br.readLine();
+
+                                    }catch (Exception ex)
+                                    {
+                                        return ex.getMessage();
+                                    }
+                                }
+                            }
+                            SharedPreferences sp = getSharedPreferences("credentials",MODE_PRIVATE);
+                            String email= sp.getString("uname","");
+                            String qry="?level=1&type=1&email="+email;
+                            dbprocess obj=new dbprocess();
+                            obj.execute(url+qry);
+
                         startActivity(new Intent(getApplicationContext(),EasywordsActivity.class));
                         }else{
-                            Toast.makeText(getApplicationContext(), "-5 points added ", Toast.LENGTH_LONG).show();
+                            class dbprocess extends AsyncTask<String,Void,String>
+                            {
+                                @Override
+                                protected  void onPostExecute(String data)
+                                {
+                                    if(data.equals("found"))
+                                    {
+                                        Toast.makeText(getApplicationContext(), "-5 points ", Toast.LENGTH_LONG).show();
+                                    }
+                                    else
+                                    {
+                                        Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                                @Override
+                                protected String doInBackground(String... params)
+                                {
+                                    String furl=params[0];
+
+                                    try
+                                    {
+                                        URL url=new URL(furl);
+                                        HttpURLConnection conn=(HttpURLConnection)url.openConnection();
+                                        BufferedReader br=new BufferedReader(new InputStreamReader(conn.getInputStream()));
+
+                                        return br.readLine();
+
+                                    }catch (Exception ex)
+                                    {
+                                        return ex.getMessage();
+                                    }
+                                }
+                            }
+                            SharedPreferences sp = getSharedPreferences("credentials",MODE_PRIVATE);
+                            String email= sp.getString("uname","");
+                            String qry="?level=1&type=0&email="+email;
+                            dbprocess obj=new dbprocess();
+                            obj.execute(url+qry);
+
                             startActivity(new Intent(getApplicationContext(),EasywordsActivity.class));
                         }
                     });
@@ -99,7 +218,7 @@ public class EasywordsActivity extends AppCompatActivity {
 
                     public void onClick(DialogInterface arg0, int arg1) {
                         startActivity(new Intent(getApplicationContext(),LevelsActivity.class));
-                        EasywordsActivity.super.onBackPressed();
+                        finish();
                     }
                 }).create().show();
 

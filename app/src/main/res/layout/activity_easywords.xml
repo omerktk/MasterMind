@@ -24,7 +24,7 @@
         android:id="@+id/corword"
         android:layout_below="@id/signin"
         android:background="#30ffffff"
-        android:text="null"
+        android:text="Waiting to load data from database"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
         android:layout_margin="10dp"
@@ -69,7 +69,17 @@
         android:backgroundTint="@color/design_default_color_secondary"
         android:text="send" />
 
-
+    <TextView
+        android:id="@+id/myscore"
+        android:gravity="right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/send"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:text="Your Score = 00 " />
 
 
     <TextView
