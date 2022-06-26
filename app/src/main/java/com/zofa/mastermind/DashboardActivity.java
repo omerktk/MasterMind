@@ -1,7 +1,9 @@
 package com.zofa.mastermind;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -32,13 +34,28 @@ public class DashboardActivity extends AppCompatActivity {
         });
 
         quit.setOnClickListener(view -> {
-            finish();
+            new AlertDialog.Builder(this)
+                    .setTitle("Exit")
+                    .setMessage("Are you sure you want to exit?")
+                    .setIcon(R.drawable.logo)
+                    .setCancelable(false)
+                    .setNegativeButton(android.R.string.no, null)
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            moveTaskToBack(true);
+                            android.os.Process.killProcess(android.os.Process.myPid());
+                            System.exit(1);
+                        }
+                    }).create().show();
+
         });
 
         logoutbtn.setOnClickListener(view -> {
             logout();
         });
     }
+
 
     private void logout() {
 
@@ -52,6 +69,11 @@ public class DashboardActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(),LoginActivity.class));
             finish();
         }
+
+    }
+
+    @Override
+    public void onBackPressed() {
 
     }
 }

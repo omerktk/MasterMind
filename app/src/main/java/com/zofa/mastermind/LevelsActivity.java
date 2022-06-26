@@ -8,7 +8,7 @@ import android.os.Bundle;
 import com.google.android.material.button.MaterialButton;
 
 public class LevelsActivity extends AppCompatActivity {
-    MaterialButton easy,medium,hard;
+    MaterialButton easy,medium,hard,back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,9 +18,21 @@ public class LevelsActivity extends AppCompatActivity {
         easy = (MaterialButton) findViewById(R.id.easy);
         medium = (MaterialButton) findViewById(R.id.medium);
         hard = (MaterialButton) findViewById(R.id.hard);
+        back = (MaterialButton) findViewById(R.id.quit1);
 
         easy.setOnClickListener(view -> {
             startActivity(new Intent(getApplicationContext(),EasywordsActivity.class));
         });
+
+        back.setOnClickListener(view -> {
+            startActivity(new Intent(getApplicationContext(),DashboardActivity.class));
+            finish();
+        });
+    }
+
+
+    @Override
+    public void onBackPressed() {
+
     }
 }

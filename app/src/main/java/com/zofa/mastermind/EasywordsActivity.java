@@ -1,7 +1,9 @@
 package com.zofa.mastermind;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
@@ -87,6 +89,19 @@ public class EasywordsActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(getApplicationContext(),DashboardActivity.class));
+        new AlertDialog.Builder(this)
+                .setTitle("Exit")
+                .setMessage("Are you sure you want to exit?")
+                .setIcon(R.drawable.logo)
+                .setCancelable(false)
+                .setNegativeButton(android.R.string.no, null)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        startActivity(new Intent(getApplicationContext(),LevelsActivity.class));
+                        EasywordsActivity.super.onBackPressed();
+                    }
+                }).create().show();
+
     }
 }
