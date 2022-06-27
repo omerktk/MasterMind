@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".EasywordsActivity">
+    tools:context=".MediumwordsActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/signin"
-        android:text="Easy Levels"
+        android:text="Medium Levels"
         android:textColor="@color/white"
         android:textSize="35dp"
         android:textStyle="bold"
@@ -42,7 +42,7 @@
         android:textColor="@color/white"
         android:layout_margin="10dp"
         android:padding="20dp"
-       />
+        />
 
 
 
@@ -70,7 +70,7 @@
         android:textColor="@color/white"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/design_default_color_secondary"
-        android:text="You have two minutes to complete this..." />
+        android:text="You have one minutes to complete this..." />
 
 
     <ProgressBar
@@ -94,7 +94,7 @@
         android:textColor="@color/white"
 
         android:backgroundTint="@color/design_default_color_secondary"
-        android:text="5 point for each correct answer." />
+        android:text="10 point for each correct answer." />
 
 
 

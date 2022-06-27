@@ -9,9 +9,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.view.View;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,12 +18,10 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.button.MaterialButton;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -33,11 +29,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
-public class EasywordsActivity extends AppCompatActivity {
-
+public class HardwordsActivity extends AppCompatActivity {
 
     MaterialButton send;
     RequestQueue requestQueue;
@@ -51,12 +44,12 @@ public class EasywordsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_easywords);
+        setContentView(R.layout.activity_hardwords);
         word = findViewById(R.id.testword);
         pb = findViewById(R.id.pbar1);
         pb.setProgress(0);
 
-        CountDownTimer countDownTimer = new CountDownTimer(120000,1200) {
+        CountDownTimer countDownTimer = new CountDownTimer(30000,300) {
             @Override
             public void onTick(long millisUntilFinished) {
                 int current = pb.getProgress() + 1;
@@ -73,8 +66,8 @@ public class EasywordsActivity extends AppCompatActivity {
         }.start();
 
 
-       GetData();
-       GetScore();
+        GetData();
+        GetScore();
     }
 
     private void GetScore() {
@@ -109,7 +102,7 @@ public class EasywordsActivity extends AppCompatActivity {
     private void GetData() {
         requestQueue = Volley.newRequestQueue(this);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-                "http://192.168.120.108/mastermind/api/game/easy.php", null, new Response.Listener<JSONObject>() {
+                "http://192.168.120.108/mastermind/api/game/hard.php", null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 tv = findViewById(R.id.corword);
@@ -137,7 +130,7 @@ public class EasywordsActivity extends AppCompatActivity {
                                 {
                                     if(data.equals("found"))
                                     {
-                                        Toast.makeText(getApplicationContext(), "5 points added", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(), "15 points added", Toast.LENGTH_LONG).show();
                                     }
                                     else
                                     {
@@ -165,11 +158,11 @@ public class EasywordsActivity extends AppCompatActivity {
                             }
                             SharedPreferences sp = getSharedPreferences("credentials",MODE_PRIVATE);
                             String email= sp.getString("uname","");
-                            String qry="?level=1&type=1&email="+email;
+                            String qry="?level=3&type=1&email="+email;
                             dbprocess obj=new dbprocess();
                             obj.execute(url+qry);
 
-                        startActivity(new Intent(getApplicationContext(),EasywordsActivity.class));
+                            startActivity(new Intent(getApplicationContext(),HardwordsActivity.class));
                         }else{
                             class dbprocess extends AsyncTask<String,Void,String>
                             {
@@ -178,7 +171,7 @@ public class EasywordsActivity extends AppCompatActivity {
                                 {
                                     if(data.equals("found"))
                                     {
-                                        Toast.makeText(getApplicationContext(), "-5 points ", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(), "-15 points ", Toast.LENGTH_LONG).show();
                                     }
                                     else
                                     {
@@ -206,11 +199,11 @@ public class EasywordsActivity extends AppCompatActivity {
                             }
                             SharedPreferences sp = getSharedPreferences("credentials",MODE_PRIVATE);
                             String email= sp.getString("uname","");
-                            String qry="?level=1&type=0&email="+email;
+                            String qry="?level=3&type=0&email="+email;
                             dbprocess obj=new dbprocess();
                             obj.execute(url+qry);
 
-                            startActivity(new Intent(getApplicationContext(),EasywordsActivity.class));
+                            startActivity(new Intent(getApplicationContext(),HardwordsActivity.class));
                         }
                     });
                 } catch (JSONException e) {
