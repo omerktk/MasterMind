@@ -1,7 +1,9 @@
 package com.zofa.mastermind;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -25,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     MaterialButton btn,btn2;
     ProgressBar progressBar;
 
-    private static final String url="http://192.168.120.108/mastermind/api/users/login.php";
+    private static final String url=Api.apiurl+"mastermind/api/users/login.php";
 
 
 
@@ -148,4 +150,24 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setTitle("Exit")
+                .setMessage("Are you sure you want to exit?")
+                .setIcon(R.drawable.logo)
+                .setCancelable(false)
+                .setNegativeButton(android.R.string.no, null)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        moveTaskToBack(true);
+                        android.os.Process.killProcess(android.os.Process.myPid());
+                        System.exit(1);
+                    }
+                }).create().show();
+
+    }
+
 }

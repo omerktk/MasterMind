@@ -28,7 +28,7 @@ public class RegActivity extends AppCompatActivity {
     EditText username,age,mail,password;
     MaterialButton regbtn,btn2;
     ProgressBar progressBar;
-    private static final String url="http://192.168.120.108/mastermind/api/users/reg.php";
+    private static final String url=Api.apiurl+"mastermind/api/users/reg.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,6 +105,8 @@ public class RegActivity extends AppCompatActivity {
                 password.setText("");
                 progressBar.setVisibility(View.GONE);
                 Toast.makeText(RegActivity.this, "User Registered", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                finish();
 
             }
         }, new Response.ErrorListener() {

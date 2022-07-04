@@ -27,7 +27,8 @@ import java.util.List;
 
 public class ScoresActivity extends AppCompatActivity {
     ListView lv;
-    String fetch_data= "http://192.168.120.108/mastermind/api/users/scores.php";
+
+    String fetch_data= "mastermind/api/users/scores.php";
 
     Adapter adapter;
     List<Mind> ViewAdsList;
@@ -43,7 +44,8 @@ public class ScoresActivity extends AppCompatActivity {
 
 
     public void GetData(){
-        StringRequest stringRequest=new StringRequest(Request.Method.GET, fetch_data, new Response.Listener<String>() {
+        String apiurldata = Api.apiurl + fetch_data;
+        StringRequest stringRequest=new StringRequest(Request.Method.GET, apiurldata, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {

@@ -32,14 +32,14 @@ import java.net.URL;
 
 public class HardwordsActivity extends AppCompatActivity {
 
-    MaterialButton send;
+    MaterialButton send,quit;
     RequestQueue requestQueue;
     TextView tv,tv2;
     EditText word;
     ProgressBar pb;
 
 
-    private static final String url="http://192.168.120.108/mastermind/api/game/testscores.php";
+    private static final String url=Api.apiurl +"mastermind/api/game/testscores.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,33 +49,32 @@ public class HardwordsActivity extends AppCompatActivity {
         pb = findViewById(R.id.pbar1);
         pb.setProgress(0);
 
-        CountDownTimer countDownTimer = new CountDownTimer(30000,300) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                int current = pb.getProgress() + 1;
-                if (current > pb.getMax()) current = 0;
-                pb.setProgress(current);
+        SharedPreferences sp=getSharedPreferences("credentials",MODE_PRIVATE);
+        if(sp.contains("uname"))
+        {
 
-            }
+        }else{
+            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+            finish();
+        }
 
-            @Override
-            public void onFinish() {
-                Toast.makeText(getApplicationContext(), "Time Over", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(getApplicationContext(),LevelsActivity.class));
-            }
-        }.start();
+
 
 
         GetData();
         GetScore();
+
     }
+
+
+
 
     private void GetScore() {
         SharedPreferences sp = getSharedPreferences("credentials",MODE_PRIVATE);
         String email= sp.getString("uname","");
         requestQueue = Volley.newRequestQueue(this);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-                "http://192.168.120.108/mastermind/api/game/testscores.php?email2="+email, null, new Response.Listener<JSONObject>() {
+                Api.apiurl +"mastermind/api/game/testscores.php?email2="+email, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 tv2 = findViewById(R.id.myscore);
@@ -100,20 +99,46 @@ public class HardwordsActivity extends AppCompatActivity {
     }
 
     private void GetData() {
+
+        CountDownTimer countDownTimer = new CountDownTimer(30000,300) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                int current = pb.getProgress() + 1;
+                if (current > pb.getMax()) current = 0;
+                pb.setProgress(current);
+
+            }
+
+            @Override
+            public void onFinish() {
+                Toast.makeText(getApplicationContext(), "Time Over", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(getApplicationContext(),LevelsActivity.class));
+            }
+        }.start();
+
+
         requestQueue = Volley.newRequestQueue(this);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-                "http://192.168.120.108/mastermind/api/game/hard.php", null, new Response.Listener<JSONObject>() {
+                Api.apiurl +"mastermind/api/game/hard.php", null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 tv = findViewById(R.id.corword);
                 send =(MaterialButton) findViewById(R.id.send);
+                quit = (MaterialButton) findViewById(R.id.quit);
 
 
                 try {
+                    quit.setOnClickListener(view -> {
+                        countDownTimer.cancel();
+                        startActivity(new Intent(getApplicationContext(),LevelsActivity.class));
+                        finish();
+                    });
+
                     String a = response.getString("test");
                     String w = response.getString("word");
                     tv.setText(a);
                     send.setOnClickListener(view -> {
+                        countDownTimer.cancel();
                         String dword = word.getText().toString();
                         if(dword.isEmpty()){
                             word.setError("Field Is Empty");
@@ -222,19 +247,6 @@ public class HardwordsActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        new AlertDialog.Builder(this)
-                .setTitle("Exit")
-                .setMessage("Are you sure you want to exit?")
-                .setIcon(R.drawable.logo)
-                .setCancelable(false)
-                .setNegativeButton(android.R.string.no, null)
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-
-                    public void onClick(DialogInterface arg0, int arg1) {
-                        startActivity(new Intent(getApplicationContext(),LevelsActivity.class));
-                        finish();
-                    }
-                }).create().show();
 
     }
 }

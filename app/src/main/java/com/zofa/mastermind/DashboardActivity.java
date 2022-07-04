@@ -29,6 +29,10 @@ public class DashboardActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(),LevelsActivity.class));
         });
 
+        about.setOnClickListener(view -> {
+            startActivity(new Intent(getApplicationContext(),AboutActivity.class));
+        });
+
         score.setOnClickListener(view -> {
             startActivity(new Intent(getApplicationContext(),ScoresActivity.class));
         });
@@ -74,6 +78,20 @@ public class DashboardActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setTitle("Exit")
+                .setMessage("Are you sure you want to exit?")
+                .setIcon(R.drawable.logo)
+                .setCancelable(false)
+                .setNegativeButton(android.R.string.no, null)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        moveTaskToBack(true);
+                        android.os.Process.killProcess(android.os.Process.myPid());
+                        System.exit(1);
+                    }
+                }).create().show();
 
     }
 }
