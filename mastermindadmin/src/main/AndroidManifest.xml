@@ -10,8 +10,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.MasterMind">
+        android:theme="@style/Theme.MasterMind"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".UpdateusersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserslistActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UsersActivity"
+            android:exported="false" />
         <activity
             android:name=".ScoresActivity"
             android:exported="false" />

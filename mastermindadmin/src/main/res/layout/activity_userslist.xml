@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".ScoresActivity">
+    tools:context=".UserslistActivity">
 
 
 
@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/signin"
-        android:text="Scores"
+        android:text="Users list"
         android:textColor="@color/white"
         android:textSize="35dp"
         android:textStyle="bold"
@@ -29,17 +29,18 @@
         android:layout_below="@+id/signin" />
 
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/quit"
+    <TextView
+
+        android:id="@+id/forgotpass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:textSize="21sp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="20dp"
-        android:textColor="@color/white"
         android:backgroundTint="@color/design_default_color_secondary"
-        android:text="Back" />
+        android:gravity="center"
+        android:text="MasterMind.org"
+        android:textSize="21sp" />
 
 
     <ProgressBar
@@ -47,7 +48,7 @@
         style="?android:attr/progressBarStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/quit"
+        android:layout_above="@+id/forgotpass"
         android:layout_below="@+id/signin"
         android:layout_marginTop="181dp"
         android:layout_marginBottom="237dp"

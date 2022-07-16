@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
@@ -16,6 +17,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.button.MaterialButton;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -27,6 +29,7 @@ import java.util.List;
 
 public class ScoresActivity extends AppCompatActivity {
     ListView lv;
+    MaterialButton quit;
 
     String fetch_data= "mastermind/api/users/scores.php";
 
@@ -38,6 +41,12 @@ public class ScoresActivity extends AppCompatActivity {
         setContentView(R.layout.activity_scores);
         lv = findViewById(R.id.lv1);
         ViewAdsList = new ArrayList<>();
+        quit = (MaterialButton) findViewById(R.id.quit);
+
+        quit.setOnClickListener(view -> {
+            super.onBackPressed();
+        });
+
         GetData();
     }
 

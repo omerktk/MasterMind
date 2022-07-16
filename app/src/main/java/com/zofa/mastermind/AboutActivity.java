@@ -61,8 +61,8 @@ public class AboutActivity extends AppCompatActivity {
                 try {
                     String a = response.getString("easy");
                     String b = response.getString("hard");
-                    tv.setText("We have 0"+a+" Easy Words to solve.");
-                    tv2.setText("We have 0"+b+" Medium/Hard Words to solve.");
+                    tv.setText("We have "+a+" Easy Words to solve.");
+                    tv2.setText("We have "+b+" Medium/Hard Words to solve.");
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Toast.makeText(getApplicationContext(), "Error"+e, Toast.LENGTH_LONG).show();

@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".DashboardActivity">
+    tools:context=".UsersActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/signin"
-        android:text="AdminPanel"
+        android:text="Manage Users"
         android:textColor="@color/white"
         android:textSize="35dp"
         android:textStyle="bold"
@@ -19,7 +19,7 @@
         android:gravity="center"/>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/play"
+        android:id="@+id/userlist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/signin"
@@ -27,53 +27,46 @@
         android:layout_marginBottom="20dp"
         android:textColor="@color/white"
         android:backgroundTint="@color/design_default_color_secondary"
-        android:text="game data" />
+        android:text="Users List" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/high"
+        android:id="@+id/adduserdata"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/play"
+        android:layout_below="@id/userlist"
         android:layout_marginTop="15dp"
         android:textColor="@color/white"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/design_default_color_secondary"
-        android:text="high score" />
+        android:text="Add User" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/about"
+        android:id="@+id/updateuserdata"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/high"
+        android:layout_below="@id/adduserdata"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="20dp"
+        android:textColor="@color/white"
         android:backgroundTint="@color/design_default_color_secondary"
-        android:text="Game Users"
-        android:textColor="@color/white" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/logout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/about"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/design_default_color_secondary"
-        android:text="text extra"
-        android:textColor="@color/white" />
+        android:text="Update User" />
 
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/quit"
+
+
+    <TextView
+
+        android:id="@+id/forgotpass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:textSize="21sp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="20dp"
-        android:textColor="@color/white"
         android:backgroundTint="@color/design_default_color_secondary"
-        android:text="Quit" />
+        android:text="MasterMind.org"
+        android:gravity="center"
+        />
 
 
 

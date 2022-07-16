@@ -1,8 +1,10 @@
 package com.zofa.mastermindadmin;
 
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -32,13 +34,50 @@ public class DashboardActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(),ScoresActivity.class));
         });
 
+        about.setOnClickListener(view -> {
+            startActivity(new Intent(getApplicationContext(),UsersActivity.class));
+        });
+
         quit.setOnClickListener(view -> {
-            finish();
+            new AlertDialog.Builder(this)
+                    .setTitle("Exit")
+                    .setMessage("Are you sure you want to exit?")
+                    .setIcon(R.drawable.logo)
+                    .setCancelable(false)
+                    .setNegativeButton(android.R.string.no, null)
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            moveTaskToBack(true);
+                            android.os.Process.killProcess(android.os.Process.myPid());
+                            System.exit(1);
+                        }
+                    }).create().show();
+
         });
 
         logoutbtn.setOnClickListener(view -> {
 
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setTitle("Exit")
+                .setMessage("Are you sure you want to exit?")
+                .setIcon(R.drawable.logo)
+                .setCancelable(false)
+                .setNegativeButton(android.R.string.no, null)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        moveTaskToBack(true);
+                        android.os.Process.killProcess(android.os.Process.myPid());
+                        System.exit(1);
+                    }
+                }).create().show();
+
     }
 
 
