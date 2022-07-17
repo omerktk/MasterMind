@@ -51,16 +51,6 @@
         android:text="Game Users"
         android:textColor="@color/white" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/logout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/about"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/design_default_color_secondary"
-        android:text="text extra"
-        android:textColor="@color/white" />
 
 
     <com.google.android.material.button.MaterialButton

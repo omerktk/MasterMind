@@ -20,7 +20,10 @@
         <entry key="..\:/Users/Omer/AndroidStudioProjects/MasterMind/app/src/main/res/layout/scorelist.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Omer/AndroidStudioProjects/MasterMind/mastermindadmin/src/main/res/drawable-v24/ic_launcher_background.xml" value="0.1185" />
         <entry key="..\:/Users/Omer/AndroidStudioProjects/MasterMind/mastermindadmin/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1185" />
+        <entry key="..\:/Users/Omer/AndroidStudioProjects/MasterMind/mastermindadmin/src/main/res/layout/activity_add_easy.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Omer/AndroidStudioProjects/MasterMind/mastermindadmin/src/main/res/layout/activity_add_hard.xml" value="0.1" />
         <entry key="..\:/Users/Omer/AndroidStudioProjects/MasterMind/mastermindadmin/src/main/res/layout/activity_dashboard.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Omer/AndroidStudioProjects/MasterMind/mastermindadmin/src/main/res/layout/activity_delete_word.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Omer/AndroidStudioProjects/MasterMind/mastermindadmin/src/main/res/layout/activity_levels.xml" value="0.2" />
         <entry key="..\:/Users/Omer/AndroidStudioProjects/MasterMind/mastermindadmin/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Omer/AndroidStudioProjects/MasterMind/mastermindadmin/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -29,6 +32,7 @@
         <entry key="..\:/Users/Omer/AndroidStudioProjects/MasterMind/mastermindadmin/src/main/res/layout/activity_updateusers.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Omer/AndroidStudioProjects/MasterMind/mastermindadmin/src/main/res/layout/activity_users.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Omer/AndroidStudioProjects/MasterMind/mastermindadmin/src/main/res/layout/activity_userslist.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Omer/AndroidStudioProjects/MasterMind/mastermindadmin/src/main/res/layout/activity_wordslist.xml" value="0.28515625" />
         <entry key="..\:/Users/Omer/AndroidStudioProjects/MasterMind/mastermindadmin/src/main/res/layout/listview_content.xml" value="0.1" />
       </map>
     </option>

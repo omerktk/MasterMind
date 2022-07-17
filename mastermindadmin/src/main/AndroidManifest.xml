@@ -13,6 +13,18 @@
         android:theme="@style/Theme.MasterMind"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".DeleteWordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddHardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddEasyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WordslistActivity"
+            android:exported="false" />
+        <activity
             android:name=".UpdateusersActivity"
             android:exported="false" />
         <activity

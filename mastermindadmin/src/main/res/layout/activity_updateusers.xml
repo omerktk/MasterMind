@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
         android:gravity="center"
-        android:text="Update User Data"
+        android:text="Update Users"
         android:textColor="@color/white"
         android:textSize="35dp"
         android:textStyle="bold" />
@@ -43,7 +43,7 @@
         android:id="@+id/usernameupdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/spacer1"
+        android:layout_below="@id/idupdate"
         android:layout_margin="10dp"
         android:background="#30ffffff"
         android:drawableLeft="@drawable/ic_baseline_person_outline_24"
@@ -94,7 +94,7 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="20dp"
         android:backgroundTint="@color/design_default_color_secondary"
-        android:text="Register" />
+        android:text="Update User" />
 
     <ProgressBar
         android:id="@+id/progressBar88"
@@ -123,14 +123,6 @@
         />
 
 
-    <View
-        android:id="@+id/spacer1"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider"
-        android:layout_below="@+id/idupdate"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="20dp"/>
 
 
 </RelativeLayout>

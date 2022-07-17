@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/signin"
-        android:text="Manage Levels"
+        android:text="Manage Words"
         android:textColor="@color/white"
         android:textSize="35dp"
         android:textStyle="bold"
@@ -19,7 +19,7 @@
         android:gravity="center"/>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/easy"
+        android:id="@+id/wordlist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/signin"
@@ -27,29 +27,41 @@
         android:layout_marginBottom="20dp"
         android:textColor="@color/white"
         android:backgroundTint="@color/design_default_color_secondary"
-        android:text="easy" />
+        android:text="words list" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/medium"
+        android:id="@+id/addeasyword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/easy"
+        android:layout_below="@id/wordlist"
         android:layout_marginTop="15dp"
         android:textColor="@color/white"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/design_default_color_secondary"
-        android:text="medium" />
+        android:text="add easy word" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/hard"
+        android:id="@+id/addhardword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/medium"
+        android:layout_below="@id/addeasyword"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="20dp"
         android:textColor="@color/white"
         android:backgroundTint="@color/design_default_color_secondary"
-        android:text="Hard" />
+        android:text="add medium/Hard word" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/dword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addhardword"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:text="Delete Words" />
 
 
 

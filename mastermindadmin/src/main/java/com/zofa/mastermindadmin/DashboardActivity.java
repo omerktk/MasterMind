@@ -20,7 +20,7 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        logoutbtn = (MaterialButton) findViewById(R.id.logout);
+
         play = (MaterialButton) findViewById(R.id.play);
         score = (MaterialButton) findViewById(R.id.high);
         about = (MaterialButton) findViewById(R.id.about);
@@ -56,9 +56,7 @@ public class DashboardActivity extends AppCompatActivity {
 
         });
 
-        logoutbtn.setOnClickListener(view -> {
 
-        });
     }
 
     @Override
