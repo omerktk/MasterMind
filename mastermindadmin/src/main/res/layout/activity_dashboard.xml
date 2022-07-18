@@ -4,50 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@color/white"
     tools:context=".DashboardActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/signin"
-        android:text="AdminPanel"
-        android:textColor="@color/white"
+        android:text="Admin Panel"
+        android:textColor="#355C7D"
         android:textSize="35dp"
         android:textStyle="bold"
         android:layout_margin="50dp"
         android:gravity="center"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/play"
+    <TextView
+        android:id="@+id/text2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:text="Manage your application here"
+        android:textColor="#355C7D"
+        android:textSize="20dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/play"
+        android:layout_width="224dp"
+        android:layout_height="57dp"
         android:layout_below="@id/signin"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginBottom="38dp"
         android:textColor="@color/white"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:background="@drawable/round_btn2"
+        android:backgroundTint="#F67280"
         android:text="game data" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/high"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="224dp"
+        android:layout_height="57dp"
         android:layout_below="@id/play"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginBottom="38dp"
         android:textColor="@color/white"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:background="@drawable/round_btn2"
+        android:backgroundTint="#F67280"
         android:text="high score" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/about"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="224dp"
+        android:layout_height="57dp"
         android:layout_below="@id/high"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginBottom="38dp"
+        android:background="@drawable/round_btn2"
+        android:backgroundTint="#F67280"
         android:text="Game Users"
         android:textColor="@color/white" />
 
@@ -55,14 +77,17 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/quit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="224dp"
+        android:layout_height="57dp"
         android:layout_alignParentBottom="true"
         android:textSize="21sp"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginBottom="38dp"
         android:textColor="@color/white"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:background="@drawable/round_btn2"
+        android:backgroundTint="#F67280"
         android:text="Quit" />
 
 

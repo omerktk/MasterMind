@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@color/white"
     tools:context=".DashboardActivity">
 
     <TextView
@@ -12,21 +12,36 @@
         android:layout_height="wrap_content"
         android:id="@+id/signin"
         android:text="Dashboard"
-        android:textColor="@color/white"
+        android:textColor="#355C7D"
         android:textSize="35dp"
         android:textStyle="bold"
         android:layout_margin="50dp"
         android:gravity="center"/>
+<!--    <TextView-->
+<!--        android:id="@+id/text2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="50dp"-->
+<!--        android:layout_marginTop="110dp"-->
+<!--        android:layout_marginEnd="50dp"-->
+<!--        android:layout_marginBottom="50dp"-->
+<!--        android:gravity="center"-->
+<!--        android:text="Yhan pe kuch likhna hy ye khali acha nhi lag rha."-->
+<!--        android:textColor="#355C7D"-->
+<!--        android:textSize="20dp" />-->
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/play"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/signin"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="38dp"
         android:textColor="@color/white"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:backgroundTint="#355C7D"
+        android:background="@drawable/rounde_btn"
         android:text="play" />
 
     <com.google.android.material.button.MaterialButton
@@ -34,10 +49,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/play"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="38dp"
         android:textColor="@color/white"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:backgroundTint="#355C7D"
+        android:background="@drawable/rounde_btn"
         android:text="high score" />
 
     <com.google.android.material.button.MaterialButton
@@ -45,10 +63,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/high"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="38dp"
         android:textColor="@color/white"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:backgroundTint="#355C7D"
+        android:background="@drawable/rounde_btn"
         android:text="About Game" />
 
     <com.google.android.material.button.MaterialButton
@@ -56,9 +77,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/about"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="38dp"
+        android:backgroundTint="#355C7D"
+        android:background="@drawable/rounde_btn"
         android:text="Logout"
         android:textColor="@color/white"
         />
@@ -70,10 +94,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:textSize="21sp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="38dp"
         android:textColor="@color/white"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:backgroundTint="#355C7D"
+        android:background="@drawable/rounde_btn"
         android:text="Quit" />
 
 

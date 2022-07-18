@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:textColor="@color/black"
+        android:padding="10dp"
+        android:textColor="#355C7D"
         android:text="Dashboard"
         />
 
@@ -21,7 +22,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="12sp"
-        android:textColor="@color/black"
+        android:padding="10dp"
+        android:textColor="#F67280"
         android:text="Dashboard"
 
         />

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@color/white"
     tools:context=".HardwordsActivity">
 
     <TextView
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/signin"
         android:text="Hard Levels"
-        android:textColor="@color/white"
+        android:textColor="#355C7D"
         android:textSize="35dp"
         android:textStyle="bold"
         android:layout_margin="50dp"
@@ -23,10 +23,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/corword"
         android:layout_below="@id/signin"
-        android:background="#30ffffff"
+        android:background="#3C355C7D"
         android:text="Waiting to load data from database"
-        android:textColorHint="@color/white"
-        android:textColor="@color/white"
+        android:textColorHint="#355C7D"
+        android:textColor="#355C7D"
         android:layout_margin="10dp"
         android:padding="20dp"
         />
@@ -36,10 +36,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/testword"
         android:layout_below="@id/corword"
-        android:background="#30ffffff"
+        android:background="#3C355C7D"
         android:hint="Write correct word here.."
-        android:textColorHint="@color/white"
-        android:textColor="@color/white"
+        android:textColorHint="#355C7D"
+        android:textColor="#355C7D"
         android:layout_margin="10dp"
         android:padding="20dp"
         />
@@ -53,24 +53,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/testword"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="38dp"
         android:textColor="@color/white"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:backgroundTint="#355C7D"
+        android:background="@drawable/rounde_btn"
         android:text="send" />
 
 
     <TextView
         android:id="@+id/timerr"
-        android:gravity="left"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/send"
         android:layout_marginTop="15dp"
-        android:textColor="@color/white"
         android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/design_default_color_secondary"
-        android:text="You have 30 seconds to complete this..." />
+        android:backgroundTint="#355C7D"
+        android:padding="10dp"
+        android:gravity="left"
+        android:text="You have 30 seconds to complete this..."
+        android:textColor="#355C7D" />
 
 
     <ProgressBar
@@ -81,7 +85,7 @@
         android:layout_below="@+id/timerr"
         android:max="100"
         android:progress="50"
-
+        android:padding="10dp"
         />
 
     <TextView
@@ -91,9 +95,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/pbar1"
         android:layout_marginTop="15dp"
-        android:textColor="@color/white"
-
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:textColor="#355C7D"
+        android:padding="10dp"
+        android:backgroundTint="#355C7D"
         android:text="15 point for each correct answer." />
 
 
@@ -105,9 +109,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/medium"
         android:layout_marginTop="5dp"
-        android:textColor="@color/white"
+        android:textColor="#355C7D"
+        android:padding="10dp"
         android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:backgroundTint="#355C7D"
         android:text="Your Score = 00 " />
 
 
@@ -117,10 +122,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:textSize="21sp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="38dp"
         android:textColor="@color/white"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:backgroundTint="#355C7D"
+        android:background="@drawable/rounde_btn"
         android:text="Back" />
 
 

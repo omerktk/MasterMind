@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@color/white"
     tools:context=".UserslistActivity">
 
 
@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/signin"
         android:text="Users list"
-        android:textColor="@color/white"
+        android:textColor="#355C7D"
         android:textSize="35dp"
         android:textStyle="bold"
         android:layout_margin="50dp"
@@ -37,7 +37,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:textColor="#355C7D"
+        android:backgroundTint="#355C7D"
         android:gravity="center"
         android:text="MasterMind.org"
         android:textSize="21sp" />

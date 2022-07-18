@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@color/white"
     android:visibility="visible"
     tools:context=".UpdateusersActivity">
 
@@ -16,9 +16,22 @@
         android:layout_margin="50dp"
         android:gravity="center"
         android:text="Update Users"
-        android:textColor="@color/white"
+        android:textColor="#355C7D"
         android:textSize="35dp"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:text="Update a users here"
+        android:textColor="#355C7D"
+        android:textSize="20dp" />
 
 
     <EditText
@@ -30,14 +43,14 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#30ffffff"
-        android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+        android:background="#3C355C7D"
+        android:drawableLeft="@drawable/person"
         android:drawablePadding="20dp"
         android:hint="User ID"
         android:inputType="number"
         android:padding="20dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white" />
+        android:textColor="#355C7D"
+        android:textColorHint="#355C7D" />
 
     <EditText
         android:id="@+id/usernameupdate"
@@ -45,13 +58,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/idupdate"
         android:layout_margin="10dp"
-        android:background="#30ffffff"
-        android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+        android:background="#3C355C7D"
+        android:drawableLeft="@drawable/person"
         android:drawablePadding="20dp"
         android:hint="User Name"
         android:padding="20dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white" />
+        android:textColor="#355C7D"
+        android:textColorHint="#355C7D" />
 
 
 
@@ -61,14 +74,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/usernameupdate"
         android:layout_margin="10dp"
-        android:background="#30ffffff"
-        android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+        android:background="#3C355C7D"
+        android:drawableLeft="@drawable/person"
         android:drawablePadding="20dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:padding="20dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white" />
+        android:textColor="#355C7D"
+        android:textColorHint="#355C7D" />
 
     <EditText
         android:id="@+id/passwordupdate"
@@ -76,14 +89,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/mailupdate"
         android:layout_margin="10dp"
-        android:background="#30ffffff"
-        android:drawableLeft="@drawable/ic_baseline_info_24"
+        android:background="#3C355C7D"
+        android:drawableLeft="@drawable/lock"
         android:drawablePadding="20dp"
         android:hint="Password"
         android:inputType="textPassword"
         android:padding="20dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white" />
+        android:textColor="#355C7D"
+        android:textColorHint="#355C7D" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/loginbtnupdate"
@@ -93,7 +106,8 @@
         android:layout_below="@id/passwordupdate"
         android:layout_centerHorizontal="true"
         android:layout_margin="20dp"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:background="@drawable/round_btn2"
+        android:backgroundTint="#F67280"
         android:text="Update User" />
 
     <ProgressBar
@@ -117,7 +131,8 @@
         android:textSize="21sp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:textColor="#355C7D"
+        android:backgroundTint="#355C7D"
         android:text="MasterMind.org"
         android:gravity="center"
         />

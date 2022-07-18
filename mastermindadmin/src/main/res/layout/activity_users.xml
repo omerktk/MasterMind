@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@color/white"
     tools:context=".UsersActivity">
 
     <TextView
@@ -12,43 +12,65 @@
         android:layout_height="wrap_content"
         android:id="@+id/signin"
         android:text="Manage Users"
-        android:textColor="@color/white"
+        android:textColor="#355C7D"
         android:textSize="35dp"
         android:textStyle="bold"
         android:layout_margin="50dp"
         android:gravity="center"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/userlist"
+    <TextView
+        android:id="@+id/text2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:text="Here You Can Manage Game,s Users"
+        android:textColor="#355C7D"
+        android:textSize="20dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/userlist"
+        android:layout_width="224dp"
+        android:layout_height="57dp"
         android:layout_below="@id/signin"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginBottom="38dp"
         android:textColor="@color/white"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:background="@drawable/round_btn2"
+        android:backgroundTint="#F67280"
         android:text="Users List" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/adduserdata"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="224dp"
+        android:layout_height="57dp"
         android:layout_below="@id/userlist"
-        android:layout_marginTop="15dp"
         android:textColor="@color/white"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginBottom="38dp"
+        android:background="@drawable/round_btn2"
+        android:backgroundTint="#F67280"
         android:text="Add User" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/updateuserdata"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="224dp"
+        android:layout_height="57dp"
         android:layout_below="@id/adduserdata"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginBottom="38dp"
         android:textColor="@color/white"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:background="@drawable/round_btn2"
+        android:backgroundTint="#F67280"
         android:text="Update User" />
 
 

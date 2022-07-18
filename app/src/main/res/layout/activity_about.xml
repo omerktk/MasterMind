@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@color/white"
     tools:context=".LevelsActivity">
 
     <TextView
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/signin"
         android:text="About Game"
-        android:textColor="@color/white"
+        android:textColor="#355C7D"
         android:textSize="35dp"
         android:textStyle="bold"
         android:layout_margin="50dp"
@@ -23,23 +23,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/signin"
-        android:layout_marginTop="15dp"
-        android:textSize="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="20dp"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/design_default_color_secondary"
-        android:text="Master Mind is a word game." />
+        android:padding="20dp"
+        android:backgroundTint="#355C7D"
+        android:text="Master Mind is a word game."
+        android:textColor="#355C7D"
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/mediumtv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/easy"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:padding="20dp"
+        android:backgroundTint="#355C7D"
         android:text="We have 00 Easy Words to solve."
-        android:textColor="@color/white"
+        android:textColor="#355C7D"
         android:textSize="20dp" />
 
     <TextView
@@ -47,27 +49,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/mediumtv"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
+        android:padding="20dp"
         android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:backgroundTint="#355C7D"
         android:text="We have 00 Medium/Hard Words to solve."
-        android:textColor="@color/white"
+        android:textColor="#355C7D"
         android:textSize="20dp" />
 
 
     <TextView
-        android:textSize="20dp"
         android:id="@+id/hardi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/hardtv"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
+        android:padding="20dp"
         android:layout_marginBottom="20dp"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/design_default_color_secondary"
-        android:text="All Levels have there on time limits." />
-
-
+        android:backgroundTint="#355C7D"
+        android:text="All Levels have there on time limits."
+        android:textColor="#355C7D"
+        android:textSize="20dp" />
 
 
     <com.google.android.material.button.MaterialButton
@@ -75,15 +77,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:textSize="21sp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="38dp"
+        android:backgroundTint="#355C7D"
+        android:background="@drawable/rounde_btn"
+        android:text="Back"
         android:textColor="@color/white"
-        android:backgroundTint="@color/design_default_color_secondary"
-        android:text="Back" />
-
-
-
+        android:textSize="21sp" />
 
 
 </RelativeLayout>
