@@ -39,8 +39,12 @@ public class RegActivity extends AppCompatActivity {
         mail = findViewById(R.id.mail);
         password = findViewById(R.id.password);
         regbtn = (MaterialButton) findViewById(R.id.loginbtn);
+        btn2 = (MaterialButton) findViewById(R.id.btnlog);
         regbtn.setOnClickListener(view -> {
             registerUser();
+        });
+        btn2.setOnClickListener(view -> {
+            super.onBackPressed();
         });
     }
 
