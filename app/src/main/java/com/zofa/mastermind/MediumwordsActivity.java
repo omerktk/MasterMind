@@ -181,7 +181,7 @@ public class MediumwordsActivity extends AppCompatActivity {
                             }
                             SharedPreferences sp = getSharedPreferences("credentials",MODE_PRIVATE);
                             String email= sp.getString("uname","");
-                            String qry="?level=3&type=1&email="+email;
+                            String qry="?level=2&type=1&email="+email;
                             dbprocess obj=new dbprocess();
                             obj.execute(url+qry);
 
@@ -222,7 +222,7 @@ public class MediumwordsActivity extends AppCompatActivity {
                             }
                             SharedPreferences sp = getSharedPreferences("credentials",MODE_PRIVATE);
                             String email= sp.getString("uname","");
-                            String qry="?level=3&type=0&email="+email;
+                            String qry="?level=2&type=0&email="+email;
                             dbprocess obj=new dbprocess();
                             obj.execute(url+qry);
 
